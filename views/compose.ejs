@@ -1,0 +1,26 @@
+<%- include("partials/head.ejs") %> <%- include("partials/navBar.ejs") %>
+
+<div class="box">
+	<h1>Compose</h1>
+
+	<form action="/compose" method="post">
+		<div class="form-group">
+			<label class="form-label">Title Post</label>
+			<input type="text" name="postTitle" class="form-control" required />
+			<label>Blog Post</label>
+			<textarea
+				name="postBody"
+				class="form-control"
+				rows="5"
+				cols="4"
+				required
+			></textarea>
+		</div>
+
+		<div class="container ps-0">
+			<button type="submit" class="btn btn-primary">Publish</button>
+		</div>
+	</form>
+</div>
+
+<%- include("partials/footer.ejs") %>
