@@ -7,8 +7,6 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
-const PORT = 5000;
-
 app.use("/", router);
 
 app.use("/posts/:postId", router);
@@ -21,6 +19,11 @@ app.use("/compose", router);
 
 app.use("/compose", router);
 
-app.listen(PORT, function () {
-	console.log("Server started on port 5000");
+let port = process.env.PORT;
+if (port == null || port == "") {
+	port = 5000;
+}
+
+app.listen(port, function () {
+	console.log(`Server has started on port ${port}`);
 });
