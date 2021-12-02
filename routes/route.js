@@ -4,8 +4,6 @@ const router = express.Router();
 const connect = require("../mongoDB/db.js");
 const Post = require("../mongoDB/db.js");
 
-const app = express();
-
 router.use(bodyParser.urlencoded({ extended: true }));
 
 try {

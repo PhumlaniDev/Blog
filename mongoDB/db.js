@@ -1,7 +1,8 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
 // connect to mongoDB
-const connect = mongoose.connect("mongodb://localhost:27017/blogDB");
+const connect = mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
 
 // database structure aka schema
 const postSchema = {
