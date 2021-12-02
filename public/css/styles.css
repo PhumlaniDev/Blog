@@ -36,3 +36,8 @@
 .box {
 	padding: 5rem;
 }
+
+.button-box {
+	padding-top: 12px;
+	padding-left: 0;
+}

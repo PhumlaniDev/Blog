@@ -6,7 +6,7 @@ const Post = require("../mongoDB/db.js");
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.urlencoded({ extended: true }));
 
 try {
 	connect;
@@ -53,14 +53,15 @@ router.get("/compose", (req, res) => {
 router.post("/compose", (req, res) => {
 	const post = new Post({
 		title: req.body.postTitle,
-		title: req.body.postBody,
+		content: req.body.postBody,
 	});
-
 	post.save(function (err) {
 		if (!err) {
 			res.redirect("/");
 		}
 	});
+
+	console.log(post);
 });
 
 module.exports = router;
