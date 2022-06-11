@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
-const connect = require("../mongoDB/db.js");
-const Post = require("../mongoDB/db.js");
+const connect = require("../config/db");
+const Post = require("../config/db");
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
@@ -33,7 +33,8 @@ router.get("/posts/:postId", (req, res) => {
 
 router.get("/about", (req, res) => {
 	res.render("about", {
-		About: "Deem is an online journal and blog that's explorative of all topics related to design. They feel that design is everywhere and cover topics that combine design with people, brands and the world overall.",
+		About:
+			"Deem is an online journal and blog that's explorative of all topics related to design. They feel that design is everywhere and cover topics that combine design with people, brands and the world overall.",
 	});
 });
 
